@@ -108,5 +108,5 @@ C:\Users\ADMIN\source\repos\lab3_trang\obj\Debug\lab3_trang.dll
 C:\Users\ADMIN\source\repos\lab3_trang\obj\Debug\lab3_trang.pdb
 C:\Users\ADMIN\source\repos\lab3_trang\obj\Debug\lab3_trang.Migrations.InitialModel.resources
 C:\Users\ADMIN\source\repos\lab3_trang\obj\Debug\lab3_trang.csproj.GenerateResource.cache
-C:\Users\ADMIN\source\repos\lab3_trang\obj\Debug\lab3_trang.Migrations.CreateTableCourse.resources
 C:\Users\ADMIN\source\repos\lab3_trang\obj\Debug\lab3_trang.Migrations.PopulateCategoryTable.resources
+C:\Users\ADMIN\source\repos\lab3_trang\obj\Debug\lab3_trang.Migrations.CreateTableCourse.resources

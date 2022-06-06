@@ -13,7 +13,7 @@ namespace lab3_trang.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202205300815055_CreateTableCourse"; }
+            get { return "202206060556132_CreateTableCourse"; }
         }
         
         string IMigrationMetadata.Source

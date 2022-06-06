@@ -9,9 +9,9 @@ namespace lab3_trang.Models
 {
     public class Course
     {
-        public int Id { get; set;  }
+        public int Id { get; set; }
 
-        public ApplicationUser Lecturer { get; set; }
+        public bool IsCanceled { get; set; }
         [Required]
         [StringLength(255)]
         public string Place { get; set; }
@@ -20,5 +20,5 @@ namespace lab3_trang.Models
         [Required]
         public byte CategoryId { get; set; }
     }
-    
+
 }
