@@ -1,16 +1,30 @@
-﻿using System;
+﻿using lab3_trang.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+
 
 namespace lab3_trang.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private ApplicationDbContext _dbContext;
+
+        public HomeController()
         {
-            return View();
+            _dbContext = new ApplicationDbContext();
+        }
+
+        public ActionResult Index()
+        { 
+            var upcommingCoure = _dbContext.Courses
+                .Include(x=>x.Lecturer)
+                .Include(x => x.Category)
+                .Where(c => c.DateTime > DateTime.Now);
+            return View(upcommingCoure);
         }
 
         public ActionResult About()

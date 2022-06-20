@@ -7,13 +7,13 @@ namespace lab3_trang.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PopulateCategoryTable : IMigrationMetadata
+    public sealed partial class AddAttendance : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateCategoryTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAttendance));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205300842114_PopulateCategoryTable"; }
+            get { return "202206130801429_AddAttendance"; }
         }
         
         string IMigrationMetadata.Source

@@ -21,22 +21,24 @@ namespace lab3_trang.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        IsCanceled = c.Boolean(nullable: false),
+                        LecturerId = c.String(nullable: false, maxLength: 128),
                         Place = c.String(nullable: false, maxLength: 255),
                         DateTime = c.DateTime(nullable: false),
                         CategoryId = c.Byte(nullable: false),
-                        Lecturer_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.Lecturer_Id)
-                .Index(t => t.CategoryId)
-                .Index(t => t.Lecturer_Id);
+                .ForeignKey("dbo.AspNetUsers", t => t.LecturerId, cascadeDelete: true)
+                .Index(t => t.LecturerId)
+                .Index(t => t.CategoryId);
             
             CreateTable(
                 "dbo.AspNetUsers",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(maxLength: 255),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -105,7 +107,7 @@ namespace lab3_trang.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Courses", "Lecturer_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Courses", "LecturerId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
@@ -116,8 +118,8 @@ namespace lab3_trang.Migrations
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Courses", new[] { "Lecturer_Id" });
             DropIndex("dbo.Courses", new[] { "CategoryId" });
+            DropIndex("dbo.Courses", new[] { "LecturerId" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");

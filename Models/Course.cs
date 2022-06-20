@@ -12,6 +12,10 @@ namespace lab3_trang.Models
         public int Id { get; set; }
 
         public bool IsCanceled { get; set; }
+
+        public ApplicationUser Lecturer { get; set; }
+        [Required]
+        public string LecturerId { get; set; }
         [Required]
         [StringLength(255)]
         public string Place { get; set; }
